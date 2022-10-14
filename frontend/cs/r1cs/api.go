@@ -470,10 +470,8 @@ func (system *r1cs) Cmp(i1, i2 frontend.Variable) frontend.Variable {
 		iszeroi2 := system.IsZero(bi2[i])
 
 		i1i2 := system.And(bi1[i], iszeroi2)
-		i2i1 := system.And(bi2[i], iszeroi1)
-
-		n := system.Select(i2i1, 0, 0)
-		m := system.Select(i1i2, 1, n)
+		
+		m := system.Select(i1i2, 1, 0)
 
 		res = system.Select(system.IsZero(res), m, res)
 
