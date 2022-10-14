@@ -466,7 +466,7 @@ func (system *r1cs) Cmp(i1, i2 frontend.Variable) frontend.Variable {
 
 	for i := system.BitLen() - 1; i >= 0; i-- {
 
-		iszeroi1 := system.IsZero(bi1[i])
+// 		iszeroi1 := system.IsZero(bi1[i])
 		iszeroi2 := system.IsZero(bi2[i])
 
 		i1i2 := system.And(bi1[i], iszeroi2)
